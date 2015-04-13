@@ -1,0 +1,10 @@
+SublimeLinter-contrib-htmlhint
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to htmlhint.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/mmaday/SublimeLinter-contrib-htmlhint
