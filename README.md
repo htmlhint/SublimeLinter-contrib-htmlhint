@@ -1,7 +1,7 @@
 SublimeLinter-contrib-htmlhint
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint)
+<!--- [![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint) -->
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [htmlhint](https://github.com/mmaday/SublimeLinter-contrib-htmlhint). It will be used with files that have the “HTML” syntax.
 
@@ -11,14 +11,16 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 ### Linter installation
 Before using this plugin, you must ensure that `htmlhint` is installed on your system. To install `htmlhint`, do the following:
 
-1. Install Other.
+1. Install [Node.js](http://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
 
 1. Install `htmlhint` by typing the following in a terminal:
    ```
    npm install -g htmlhint
    ```
 
-**Note:** This plugin requires `htmlhint` __version__ or later.
+1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
+
+**Note:** This plugin requires `htmlhint` 0.9.0 or later.
 
 ### Linter configuration
 In order for `htmlhint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.
