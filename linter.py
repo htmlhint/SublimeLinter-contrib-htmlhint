@@ -28,6 +28,9 @@ class Htmlhint(Linter):
     tempfile_suffix = '-'
     config_file = ('--config', '.htmlhintrc', '~')
 
+    # htmlhint uses color codes to distinguish errors and warnings
+    # colors get stripped by sublimelinter
+    # match warnings instead
     warn_regex = (
         r'^(Doctype must be html5.'
         r'|The script tag can not be used in head'
@@ -40,14 +43,15 @@ class Htmlhint(Linter):
     )
     warn_re = re.compile(warn_regex)
 
-    def split_match(self, match):       
+    def split_match(self, match):
         split = super().split_match(match)
         if match:
             message = match.group('message')
-            
+
+            # check if message is a warning
             warn = self.warn_re.match(message)
             if warn:
                 split = (split[0], split[1], split[2], False, True, split[5], split[6])
-            
+
             persist.debug('match -- msg:"{}", split:"{}", warn: {}'.format(message, split, warn))
         return split
