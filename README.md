@@ -3,7 +3,7 @@ SublimeLinter-contrib-htmlhint
 
 <!--- [![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint) -->
 
-This linter plugin for [SublimeLinter][docs] provides an interface to [htmlhint](https://github.com/mmaday/SublimeLinter-contrib-htmlhint). It will be used with files that have the “HTML” syntax.
+This linter plugin for [SublimeLinter][docs] provides an interface to [htmlhint](http://htmlhint.com/). It will be used with files that have the “HTML” syntax.
 
 ## Installation
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
