@@ -20,7 +20,6 @@ class Htmlhint(Linter):
 
     syntax = 'html'
     cmd = 'htmlhint'
-    # executable = 'htmlhint'
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.9.0'
