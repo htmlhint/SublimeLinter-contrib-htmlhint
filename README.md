@@ -39,7 +39,7 @@ To install via Package Control, do the following:
 ## Settings
 For general information on how SublimeLinter works with settings, please see [Settings][settings]. For information on generic linter settings, please see [Linter Settings][linter-settings].
 
-You can configure `htmlhint` options in the way you would from the command line, with `.htmlhintrc` files. For more information, see the [htmlhintrc docs](https://github.com/yaniswang/HTMLHint/wiki/Developer-guide). The linter plugin does this by searching for a `.htmlhintrc` file itself, just as `htmlhint` does from the command line. You may provide a custom config file by setting the linter’s `"args"` setting to `["--config", "/path/to/file"]`. On Windows, be sure to double the backslashes in the path, for example `["--config", "C:\\Users\\Username\\htmlhint.conf"]`.
+You can configure `htmlhint` options in the way you would from the command line, with `.htmlhintrc` files. For more information, see the [htmlhintrc docs](https://github.com/yaniswang/HTMLHint/wiki/Rules). The linter plugin does this by searching for a `.htmlhintrc` file itself, just as `htmlhint` does from the command line. You may provide a custom config file by setting the linter’s `"args"` setting to `["--config", "/path/to/file"]`. On Windows, be sure to double the backslashes in the path, for example `["--config", "C:\\Users\\Username\\htmlhint.conf"]`.
 
 The path to the `.htmlhintrc` file is cached, meaning if you create a new `.htmlhintrc` that should have precedence over the previous one (meaning it is closer to the .js file) you need to clear the cache for the linter to use the new `.htmlhintrc` You can clear the cache by going to: Tools > SublimeLinter > Clear Caches.
 
