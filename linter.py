@@ -11,7 +11,7 @@
 """This module exports the Htmlhint plugin class."""
 
 import re
-from SublimeLinter.lint import Linter, util, persist
+from SublimeLinter.lint import Linter, persist
 
 
 class Htmlhint(Linter):
@@ -20,7 +20,7 @@ class Htmlhint(Linter):
 
     syntax = 'html'
     cmd = 'htmlhint'
-    executable = None
+    # executable = 'htmlhint'
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 0.9.0'
@@ -44,14 +44,13 @@ class Htmlhint(Linter):
     warn_re = re.compile(warn_regex)
 
     def split_match(self, match):
-        split = super().split_match(match)
+        match, line, col, error, warning, message, near = super().split_match(match)
         if match:
-            message = match.group('message')
-
             # check if message is a warning
             warn = self.warn_re.match(message)
             if warn:
-                split = (split[0], split[1], split[2], False, True, split[5], split[6])
+                return match, line, col, False, True, message, near
 
-            persist.debug('match -- msg:"{}", split:"{}", warn: {}'.format(message, split, warn))
-        return split
+            persist.debug('match -- msg:"{}", match:{}, line:{}, col:{}, near:{}, warn: {}'.format(message, match, line, col, near, warn))
+
+        return match, line, col, error, warning, message, near
