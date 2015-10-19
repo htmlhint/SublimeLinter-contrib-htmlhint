@@ -1,0 +1,5 @@
+SublimeLinter-contrib-htmlhint 1.0.1
+------------------------------------
+Updating the version requirements.  This plugin only supports htmlhint versions 0.9.7 and prior. Later versions of htmlhint have a new output format that is unsupported.  Look for a new version that supports that latest htmlhint soon!
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for installation instructions.

@@ -15,12 +15,12 @@ Before using this plugin, you must ensure that `htmlhint` is installed on your s
 
 1. Install `htmlhint` by typing the following in a terminal:
    ```
-   npm install -g htmlhint
+   npm install -g htmlhint@0.9.7
    ```
 
 1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
 
-**Note:** This plugin requires `htmlhint` 0.9.0 or later.
+**Note:** This plugin requires `htmlhint` 0.9.0 - 0.9.7. Later versions are currently not supported.
 
 ### Linter configuration
 In order for `htmlhint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.

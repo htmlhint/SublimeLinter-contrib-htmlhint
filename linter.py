@@ -22,7 +22,7 @@ class Htmlhint(Linter):
     cmd = 'htmlhint'
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 0.9.0'
+    version_requirement = '>= 0.9.0, <= 0.9.7'
     regex = r'^\s*line (?P<line>\d+), col (?P<col>\d+): (?P<message>.+)'
     tempfile_suffix = '-'
     config_file = ('--config', '.htmlhintrc', '~')
