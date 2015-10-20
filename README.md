@@ -13,14 +13,14 @@ Before using this plugin, you must ensure that `htmlhint` is installed on your s
 
 1. Install [Node.js](http://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
 
-1. Install `htmlhint` by typing the following in a terminal:
+1. Install the latest `htmlhint` by typing the following in a terminal:
    ```
-   npm install -g htmlhint@0.9.7
+   npm install -g htmlhint@latest
    ```
 
 1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
 
-**Note:** This plugin requires `htmlhint` 0.9.0 - 0.9.7. Later versions are currently not supported.
+**Note:** This plugin requires `htmlhint` 0.9.8 or greater. Upgrade your existing installation by running step 2 above.
 
 ### Linter configuration
 In order for `htmlhint` to be executed by SublimeLinter, you must ensure that its path is available to SublimeLinter. Before going any further, please read and follow the steps in [“Finding a linter executable”](http://sublimelinter.readthedocs.org/en/latest/troubleshooting.html#finding-a-linter-executable) through “Validating your PATH” in the documentation.

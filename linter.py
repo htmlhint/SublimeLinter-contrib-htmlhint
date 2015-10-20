@@ -10,7 +10,7 @@
 
 """This module exports the Htmlhint plugin class."""
 
-import re
+import sublime
 from SublimeLinter.lint import Linter, persist
 
 
@@ -19,37 +19,54 @@ class Htmlhint(Linter):
     """Provides an interface to htmlhint."""
 
     syntax = 'html'
-    cmd = 'htmlhint'
+    cmd = ('htmlhint', '--format', 'json')
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 0.9.0, <= 0.9.7'
-    regex = r'^\s*line (?P<line>\d+), col (?P<col>\d+): (?P<message>.+)'
+    version_requirement = '>= 0.9.8'
+    # empty regex so plugin initializes properly
+    regex = r''
     tempfile_suffix = '-'
     config_file = ('--config', '.htmlhintrc', '~')
 
-    # htmlhint uses color codes to distinguish errors and warnings
-    # colors get stripped by sublimelinter
-    # match warnings instead
-    warn_regex = (
-        r'^(Doctype must be html5.'
-        r'|The script tag can not be used in head'
-        r'|The value of href \[ .*?\] must be'
-        r'|The value of .*? can not use ad keyword.'
-        r'|Alt of img tag must be set value.'
-        r'|Mixed spaces and tabs in front of line'
-        r'|Style tag can not be use'
-        r'|The empty tag : \[ \w+ \] must closed by self.)'
-    )
-    warn_re = re.compile(warn_regex)
+    def find_errors(self, output):
+        """
+        Override find_errors, parsing output json into json_object.
 
-    def split_match(self, match):
-        match, line, col, error, warning, message, near = super().split_match(match)
-        if match:
-            # check if message is a warning
-            warn = self.warn_re.match(message)
-            if warn:
-                return match, line, col, False, True, message, near
+        Calls parse_message for each error found.
 
-            persist.debug('match -- msg:"{}", match:{}, line:{}, col:{}, near:{}, warn: {}'.format(message, match, line, col, near, warn))
+        """
 
-        return match, line, col, error, warning, message, near
+        output_json = sublime.decode_value(output)
+
+        # persist.debug('output_json:"{}", file: "{}"'.format(output_json, self.filename))
+
+        for file in output_json:
+            for message in file['messages']:
+                yield self.parse_message(message)
+
+    def parse_message(self, message):
+        """
+        Parse message object into standard elements of an error and return them.
+
+        """
+
+        error_message = message['message']
+        line = message['line'] - 1
+        col = message['col']
+
+        # set error and warning flags based on message type
+        error = None
+        warning = None
+        if message['type'] == 'error':
+            error = True
+            warning = False
+        elif message['type'] == 'warning':
+            error = False
+            warning = True
+        elif message['type'] == 'info':
+            # ignore info messages by setting message to None
+            message = None
+
+        persist.debug('message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'.format(error_message, line, col, error, warning, message))
+
+        return message, line, col, error, warning, error_message, None
