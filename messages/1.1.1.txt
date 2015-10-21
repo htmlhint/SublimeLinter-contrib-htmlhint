@@ -1,0 +1,10 @@
+SublimeLinter-contrib-htmlhint 1.1.1
+------------------------------------
+This plugin has been rewritten to handle the latest output formats of htmlhint version 0.9.10 and later. It now parses the JSON output of htmlhint.
+
+*** NOTE: htmlhint version 0.9.10 and greater is now required. ***
+
+Upgrade your existing htmlhint to the latest by running:
+npm install -g htmlhint@latest
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.

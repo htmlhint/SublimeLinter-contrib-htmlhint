@@ -22,7 +22,7 @@ class Htmlhint(Linter):
     cmd = ('htmlhint', '--format', 'json')
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 0.9.8'
+    version_requirement = '>= 0.9.10'
     # empty regex so plugin initializes properly
     regex = r''
     tempfile_suffix = '-'
