@@ -1,0 +1,10 @@
+SublimeLinter-contrib-htmlhint 1.1.2
+------------------------------------
+This plugin has been updated to handle htmlhint's new stdin input feature. This means errors will be reported as you type them, rather than when you save.
+
+*** NOTE: htmlhint version 0.9.13 and greater is now required. ***
+
+Upgrade your existing htmlhint to the latest by running:
+npm install -g htmlhint@latest
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.

@@ -19,13 +19,12 @@ class Htmlhint(Linter):
     """Provides an interface to htmlhint."""
 
     syntax = 'html'
-    cmd = ('htmlhint', '--format', 'json')
+    cmd = ('htmlhint', '--format', 'json', '--nocolor', 'stdin')
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 0.9.10'
+    version_requirement = '>= 0.9.13'
     # empty regex so plugin initializes properly
     regex = r''
-    tempfile_suffix = '-'
     config_file = ('--config', '.htmlhintrc', '~')
 
     def find_errors(self, output):
