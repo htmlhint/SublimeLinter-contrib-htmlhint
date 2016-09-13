@@ -1,0 +1,14 @@
+SublimeLinter-contrib-htmlhint 1.1.3
+------------------------------------
+This plugin now supports local node package installations of htmlhint.  Thanks to TomasDuda!
+
+*** NOTE: htmlhint version 0.9.13 and greater is now required. ***
+
+Upgrade your existing global htmlhint to the latest by running:
+ npm install -g htmlhint@latest
+
+Or locally in your project folder (**you must have package.json file there**):
+ npm init -f
+ npm install htmlhint@latest
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.
