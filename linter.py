@@ -11,10 +11,10 @@
 """This module exports the Htmlhint plugin class."""
 
 import sublime
-from SublimeLinter.lint import Linter, persist
+from SublimeLinter.lint import NodeLinter, persist
 
 
-class Htmlhint(Linter):
+class Htmlhint(NodeLinter):
 
     """Provides an interface to htmlhint."""
 

@@ -13,10 +13,15 @@ Before using this plugin, you must ensure that `htmlhint` is installed on your s
 
 1. Install [Node.js](http://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
 
-1. Install the latest `htmlhint` by typing the following in a terminal:
+1. Install the latest `htmlhint` globally by typing the following in a terminal:
    ```
    npm install -g htmlhint@latest
    ```
+Or install `htmlhint` locally in your project folder (**you must have package.json file there**):
+    ```
+    npm init -f
+    npm install htmlhint@latest
+    ```
 
 1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
 
