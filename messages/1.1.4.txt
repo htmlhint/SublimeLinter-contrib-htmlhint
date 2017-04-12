@@ -1,0 +1,6 @@
+SublimeLinter-contrib-htmlhint 1.1.4
+------------------------------------
+This is a small bug fix to the lookup of the of .htmlhintrc config file.  Thanks to GoupilRobin!
+
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.
