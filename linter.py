@@ -25,7 +25,7 @@ class Htmlhint(NodeLinter):
     version_requirement = '>= 0.9.13'
     # empty regex so plugin initializes properly
     regex = r''
-    config_file = ('--config', '.htmlhintrc', '~')
+    config_file = ('--config', '.htmlhintrc')
 
     def find_errors(self, output):
         """
