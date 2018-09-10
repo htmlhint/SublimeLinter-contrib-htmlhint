@@ -1,12 +1,43 @@
-SublimeLinter-contrib-htmlhint
-================================
+<h1 align="center">
+  <br>
+  SublimeLinter contrib HTMLHint
+  <br>
+</h1>
 
-<!--- [![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-htmlhint) -->
+<h4 align="center">A SublimeLinter plugin for HTML, using HTMLHint.</h4>
+
+<p align="center">
+  <a href="https://travis-ci.org/htmlhint/SublimeLinter-contrib-htmlhint">
+    <img src="https://img.shields.io/travis/htmlhint/SublimeLinter-contrib-htmlhint.svg" alt="Travis Build Status">
+  </a>
+  <a href="https://codecov.io/gh/htmlhint/SublimeLinter-contrib-htmlhint">
+    <img src="https://codecov.io/gh/htmlhint/SublimeLinter-contrib-htmlhint/branch/master/graph/badge.svg" alt="Codecov">
+  </a>
+  <a href="https://www.npmjs.com/package/SublimeLinter-contrib-htmlhint">
+    <img src="https://img.shields.io/npm/dm/SublimeLinter-contrib-htmlhint.svg" alt="NPM count">
+  </a>
+  <img src="https://badgen.net/badge/license/MIT/green" alt="MIT Licence" />
+  <a href="https://discord.gg/nJ6J9CP">
+    <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat">
+  </a>
+  <a href="http://roadmap.htmlhint.io/roadmap">
+    <img src="https://img.shields.io/badge/check-our%20roadmap-EE503E.svg" alt="Chat">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#install">How To Use</a> • <a href="/CONTRIBUTING.md">Contributing</a> • <a href="http://roadmap.htmlhint.io/">Roadmap</a> • <a href="https://htmlhint.io">Website</a>
+</p>
+
+## Table of Contents
+
+- **[Install](#install)**
+- **[Settings](#settings)**
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [htmlhint](http://htmlhint.com/). It will be used with files that have the “HTML” syntax.
 
-## Installation
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][installation].
+## Install
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][install].
 
 ### Linter installation
 Before using this plugin, you must ensure that `htmlhint` is installed on your system. To install `htmlhint`, do the following:
@@ -42,30 +73,20 @@ To install via Package Control, do the following:
 1. When the plugin list appears, type `htmlhint`. Among the entries you should see `SublimeLinter-contrib-htmlhint`. If that entry is not highlighted, use the keyboard or mouse to select it.
 
 ## Settings
+
 For general information on how SublimeLinter works with settings, please see [Settings][settings]. For information on generic linter settings, please see [Linter Settings][linter-settings].
 
 You can configure `htmlhint` options in the way you would from the command line, with `.htmlhintrc` files. For more information, see the [htmlhintrc docs](https://github.com/yaniswang/HTMLHint/wiki/Rules). The linter plugin does this by searching for a `.htmlhintrc` file itself, just as `htmlhint` does from the command line. You may provide a custom config file by setting the linter’s `"args"` setting to `["--config", "/path/to/file"]`. On Windows, be sure to double the backslashes in the path, for example `["--config", "C:\\Users\\Username\\htmlhint.conf"]`.
 
 The path to the `.htmlhintrc` file is cached, meaning if you create a new `.htmlhintrc` that should have precedence over the previous one (meaning it is closer to the .js file) you need to clear the cache for the linter to use the new `.htmlhintrc` You can clear the cache by going to: Tools > SublimeLinter > Clear Caches.
 
+## LICENCE
 
-## Contributing
-If you would like to contribute enhancements or fixes, please do the following:
+Project initially created by [@mmaday](https://github.com/mmaday) and transferred to the [HTMLHint](https://github.com/htmlhint) organization.
 
-1. Fork the plugin repository.
-1. Hack on a separate topic branch created from the latest `master`.
-1. Commit and push the topic branch.
-1. Make a pull request.
-1. Be patient.  ;-)
+<a href="https://htmlhint.io"><img src="https://raw.githubusercontent.com/htmlhint/htmlhint/develop/src/img/htmlhint.png" alt="Logo HTMLHint" width="65"></a>
 
-Please note that modifications should follow these coding guidelines:
-
-- Indent is 4 spaces.
-- Code should pass flake8 and pep257 linters.
-- Vertical whitespace helps readability, don’t be afraid to use it.
-- Please use descriptive variable names, no abbreviations unless they are very well known.
-
-Thank you for helping out!
+[MIT License](./LICENSE)
 
 [docs]: http://sublimelinter.readthedocs.org
 [installation]: http://sublimelinter.readthedocs.org/en/latest/installation.html
