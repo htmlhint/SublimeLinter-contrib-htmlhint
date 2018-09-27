@@ -18,7 +18,9 @@ class Htmlhint(NodeLinter):
 
     """Provides an interface to htmlhint."""
 
-    syntax = 'html'
+    defaults = {
+        'selector': 'text.html'
+    }
     cmd = ('htmlhint', '--format', 'json', '--nocolor', 'stdin')
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
@@ -34,7 +36,6 @@ class Htmlhint(NodeLinter):
         Calls parse_message for each error found.
 
         """
-
         output_json = sublime.decode_value(output)
 
         # persist.debug('output_json:"{}", file: "{}"'.format(output_json, self.filename))
@@ -44,11 +45,7 @@ class Htmlhint(NodeLinter):
                 yield self.parse_message(message)
 
     def parse_message(self, message):
-        """
-        Parse message object into standard elements of an error and return them.
-
-        """
-
+        """Parse message object into standard elements of an error and return them."""
         error_message = message['message']
         line = message['line'] - 1
         col = message['col']
@@ -66,6 +63,14 @@ class Htmlhint(NodeLinter):
             # ignore info messages by setting message to None
             message = None
 
-        persist.debug('message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'.format(error_message, line, col, error, warning, message))
+        message = 'message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'
+        persist.debug(message.format(
+            error_message,
+            line,
+            col,
+            error,
+            warning,
+            message,
+        ))
 
         return message, line, col, error, warning, error_message, None
