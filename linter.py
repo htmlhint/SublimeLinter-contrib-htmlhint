@@ -18,7 +18,9 @@ class Htmlhint(NodeLinter):
 
     """Provides an interface to htmlhint."""
 
-    syntax = 'html'
+    defaults = {
+        'selector': 'text.html'
+    }
     cmd = ('htmlhint', '--format', 'json', '--nocolor', 'stdin')
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
