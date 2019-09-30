@@ -1,0 +1,5 @@
+SublimeLinter-contrib-htmlhint 2.0.0
+------------------------------------
+Upgrade to handle SublimeLinter 4.0!
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.
