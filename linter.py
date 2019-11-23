@@ -10,8 +10,13 @@
 
 """This module exports the Htmlhint plugin class."""
 
+import logging
+
 import sublime
-from SublimeLinter.lint import NodeLinter, persist
+from SublimeLinter.lint import NodeLinter
+
+
+logger = logging.getLogger("SublimeLinter.plugin.htmlhint")
 
 
 class Htmlhint(NodeLinter):
@@ -38,7 +43,7 @@ class Htmlhint(NodeLinter):
         """
         output_json = sublime.decode_value(output)
 
-        # persist.debug('output_json:"{}", file: "{}"'.format(output_json, self.filename))
+        # logger.info('output_json:"{}", file: "{}"'.format(output_json, self.filename))
 
         for file in output_json:
             for message in file['messages']:
@@ -64,7 +69,7 @@ class Htmlhint(NodeLinter):
             message = None
 
         message = 'message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'
-        persist.debug(message.format(
+        logger.info(message.format(
             error_message,
             line,
             col,
