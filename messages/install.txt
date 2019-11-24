@@ -1,10 +1,10 @@
 SublimeLinter-contrib-htmlhint
 -------------------------------
-This linter plugin for SublimeLinter provides an interface to htmlhint.  This plugin currently only works with htmlhint versions 0.9.7 and prior.  Look for a new version to support 0.9.8 soon.
+This linter plugin for SublimeLinter provides an interface to htmlhint.  This plugin currently only works with htmlhint versions 0.9.8 and above.
 
 ** IMPORTANT! **
 
 Before this plugin will activate, you *must*
 follow the installation instructions here:
 
-https://github.com/mmaday/SublimeLinter-contrib-htmlhint
+https://github.com/htmlhint/SublimeLinter-contrib-htmlhint
