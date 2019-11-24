@@ -13,7 +13,7 @@
 import logging
 
 import sublime
-from SublimeLinter.lint import NodeLinter
+from SublimeLinter.lint import LintMatch, NodeLinter
 
 
 logger = logging.getLogger("SublimeLinter.plugin.htmlhint")
@@ -23,10 +23,8 @@ class Htmlhint(NodeLinter):
 
     """Provides an interface to htmlhint."""
 
-    cmd = ('htmlhint', '--format', 'json', '--nocolor', 'stdin')
-    defaults = {
-        'selector': 'text.html'
-    }
+    cmd = ("htmlhint", "--format", "json", "--nocolor", "stdin")
+    defaults = {"selector": "text.html"}
 
     def find_errors(self, output):
         """
@@ -36,40 +34,37 @@ class Htmlhint(NodeLinter):
 
         """
         output_json = sublime.decode_value(output)
-
-        # logger.info('output_json:"{}", file: "{}"'.format(output_json, self.filename))
+        logger.debug('output_json:"%s", file: "%s"', output_json, self.filename)
 
         for file in output_json:
-            for message in file['messages']:
+            for message in file["messages"]:
                 yield self.parse_message(message)
 
     def parse_message(self, message):
         """Parse message object into standard elements of an error and return them."""
-        error_message = message['message']
-        line = message['line'] - 1
-        col = message['col']
+        error_message = message["message"]
+        line = message["line"] - 1
+        col = message["col"]
+        error_type = message["type"]
 
-        # set error and warning flags based on message type
-        error = None
-        warning = None
-        if message['type'] == 'error':
-            error = True
-            warning = False
-        elif message['type'] == 'warning':
-            error = False
-            warning = True
-        elif message['type'] == 'info':
-            # ignore info messages by setting message to None
+        # ignore message type of info
+        if error_type == "info":
             message = None
 
-        message = 'message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'
-        logger.info(message.format(
+        logger.info(
+            'message -- msg:"%s", line:%s, col:%s, type: %s, message_obj:%s',
             error_message,
             line,
             col,
-            error,
-            warning,
+            error_type,
             message,
-        ))
-
-        return message, line, col, error, warning, error_message, None
+        )
+        return LintMatch(
+            filename=self.filename,
+            line=line,
+            col=col,
+            error_type=error_type,
+            code=message.get("rule", {}).get("id", ""),
+            message=error_message,
+            match=str(message),
+        )
