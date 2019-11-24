@@ -36,8 +36,7 @@ class Htmlhint(NodeLinter):
 
         """
         output_json = sublime.decode_value(output)
-
-        # logger.info('output_json:"{}", file: "{}"'.format(output_json, self.filename))
+        logger.debug('output_json:"%s", file: "%s"', output_json, self.filename)
 
         for file in output_json:
             for message in file['messages']:
@@ -62,14 +61,13 @@ class Htmlhint(NodeLinter):
             # ignore info messages by setting message to None
             message = None
 
-        message = 'message -- msg:"{}", line:{}, col:{}, error: {}, warning: {}, message_obj:{}'
-        logger.info(message.format(
+        logger.info('message -- msg:"%s", line:%s, col:%s, error: %s, warning: %s, message_obj:%s',
             error_message,
             line,
             col,
             error,
             warning,
             message,
-        ))
+        )
 
         return message, line, col, error, warning, error_message, None
