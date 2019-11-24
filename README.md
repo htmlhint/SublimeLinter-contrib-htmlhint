@@ -37,14 +37,14 @@
 This linter plugin for [SublimeLinter][docs] provides an interface to [htmlhint](http://htmlhint.com/). It will be used with files that have the “HTML” syntax.
 
 ## Install
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here][install].
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](http://www.sublimelinter.com/en/stable/installation.html).
 
 ### Linter installation
 Before using this plugin, you must ensure that `htmlhint` is installed on your system. To install `htmlhint`, do the following:
 
 1. Install [Node.js](http://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
 
-1. Install the latest `htmlhint` globally by typing the following in a terminal:
+2. Install the latest `htmlhint` globally by typing the following in a terminal:
    ```
    npm install -g htmlhint@latest
    ```

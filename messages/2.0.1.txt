@@ -1,0 +1,6 @@
+SublimeLinter-contrib-htmlhint 2.0.1
+------------------------------------
+This is a housekeeping release to get fully up to SublimeLinter 4.0 standards.  Thanks to kaste.
+
+
+Please refer to https://github.com/mmaday/SublimeLinter-contrib-htmlhint for complete installation instructions.
