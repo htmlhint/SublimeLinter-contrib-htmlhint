@@ -24,7 +24,7 @@ class Htmlhint(NodeLinter):
     """Provides an interface to htmlhint."""
 
     cmd = ("htmlhint", "--format", "json", "--nocolor", "stdin")
-    defaults = {"selector": "source.html"}
+    defaults = {"selector": "text.html.basic"}
 
     def find_errors(self, output):
         """
