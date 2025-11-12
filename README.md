@@ -25,7 +25,7 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 
 Before using this plugin, you must ensure that `htmlhint` is installed on your system. To install `htmlhint`, do the following:
 
-1. Install [Node.js](https://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
+1. Install [Node.js](https://nodejs.org).
 
 2. Install the latest `htmlhint` globally by typing the following in a terminal:
    ```
@@ -73,9 +73,9 @@ Project initially created by [@mmaday](https://github.com/mmaday) and transferre
 
 [MIT License](./LICENSE)
 
-[docs]: https://sublimelinter.readthedocs.org
-[installation]: https://sublimelinter.readthedocs.io/en/latest/installation.html
-[locating-executables]: https://sublimelinter.readthedocs.io/en/latest/usage.html#how-linter-executables-are-located
+[docs]: https://www.sublimelinter.com/en/master/
+[installation]: https://www.sublimelinter.com/en/master/installation.html
+[locating-executables]: https://www.sublimelinter.com/en/master/index.html
 [pc]: https://sublime.wbond.net/installation
 [cmd]: https://www.docs.sublimetext.info/index.html
 [settings]: https://sublimelinter.readthedocs.io/en/latest/settings.html
